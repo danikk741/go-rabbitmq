@@ -128,7 +128,7 @@ func NewPublisher(conn *Conn, optionFuncs ...func(*PublisherOptions)) (*Publishe
 }
 
 func (publisher *Publisher) startup() error {
-	err := DeclareExchange(publisher.chanManager, publisher.options.ExchangeOptions)
+	err := declareExchange(publisher.chanManager, publisher.options.ExchangeOptions)
 	if err != nil {
 		return fmt.Errorf("declare exchange failed: %w", err)
 	}

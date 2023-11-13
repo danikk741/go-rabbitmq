@@ -91,6 +91,7 @@ type QueueOptions struct {
 	Passive    bool // if false, a missing queue will be created on the server
 	Args       Table
 	Declare    bool
+	NoConsume  bool
 }
 
 // Binding describes the bhinding of a queue to a routing key on an exchange

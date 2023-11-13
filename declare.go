@@ -4,7 +4,7 @@ import (
 	"github.com/wagslane/go-rabbitmq/internal/channelmanager"
 )
 
-func DeclareQueue(chanManager *channelmanager.ChannelManager, options QueueOptions) error {
+func declareQueue(chanManager *channelmanager.ChannelManager, options QueueOptions) error {
 	if !options.Declare {
 		return nil
 	}
@@ -36,7 +36,7 @@ func DeclareQueue(chanManager *channelmanager.ChannelManager, options QueueOptio
 	return nil
 }
 
-func DeclareExchange(chanManager *channelmanager.ChannelManager, options ExchangeOptions) error {
+func declareExchange(chanManager *channelmanager.ChannelManager, options ExchangeOptions) error {
 	if !options.Declare {
 		return nil
 	}
@@ -70,7 +70,7 @@ func DeclareExchange(chanManager *channelmanager.ChannelManager, options Exchang
 	return nil
 }
 
-func DeclareBindings(chanManager *channelmanager.ChannelManager, options ConsumerOptions) error {
+func declareBindings(chanManager *channelmanager.ChannelManager, options ConsumerOptions) error {
 	for _, binding := range options.Bindings {
 		if !binding.Declare {
 			continue
